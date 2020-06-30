@@ -33,7 +33,7 @@ my.env:
 	@if [ ! -f my.env ]; \
 	then \
 	echo "Copying my.env.dist to my.env..."; \
-	cp docker/config/my.env.dist my.env; \
+	cp my.env.dist my.env; \
 	fi
 
 data:
