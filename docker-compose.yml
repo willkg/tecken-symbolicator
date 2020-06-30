@@ -1,0 +1,12 @@
+version: "2"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    env_file:
+      - my.env
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/data
