@@ -16,8 +16,8 @@ Usage
 =====
 
 1. ``make my.env`` and modify it if you like
-1. ``make build`` to build the docker image
-2. ``make run`` to run it
+2. ``make build`` to build the docker image
+3. ``make run`` to run it
 
 
 Documentation
