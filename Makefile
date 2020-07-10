@@ -52,3 +52,14 @@ build: my.env
 .PHONY: run
 run: my.env .docker-build data
 	${DC} up app
+
+.docker-build-systemtests: config.yml
+	make build-systemtests
+
+.PHONY: build-systemtests
+build-systemtests: my.env
+	${DC} build --build-arg userid=${APP_UID} --build-arg groupid=${APP_GID} systemtests
+	touch .docker-build-systemtests
+
+systemtests: my.env .docker-build-systemtests
+	${DC} run --rm --user ${APP_UID} systemtests /bin/bash

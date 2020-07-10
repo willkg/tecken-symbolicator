@@ -10,3 +10,13 @@ services:
       - "8000:8000"
     volumes:
       - ./data:/data
+
+  # Shell for system tests and other experimentation
+  systemtests:
+    build:
+      context: .
+      dockerfile: systemtests/Dockerfile
+    env_file:
+      - my.env
+    volumes:
+      - .:/app
